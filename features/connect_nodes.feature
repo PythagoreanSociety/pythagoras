@@ -1,7 +1,7 @@
-Feature: Connecting Nodes with Connectors
-  In order to be able to link Nodes into a Graph
+Feature: Connecting Nodes with Connectors in a Data Flow Chart
+  In order to be able to link Nodes in a Data Flow Chart
   As a User
-  I should be able to create connections between linkable Nodes
+  I should be able to create connections between Nodes if they are linkable
 
   Scenario: Connecting Nodes having connectable Ports
     Given I have a Node with an Output Port
