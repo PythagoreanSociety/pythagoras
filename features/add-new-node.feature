@@ -1,20 +1,28 @@
-Feature: Add a New Node (i.e Instantate a New Class) in the Development Enironment
-  In order to add a new node in my current development environment in Pythagoras
+Feature: Adding a New Node 
+  In order to create new Instances and subtype existing Types
   As a User
-  I first should be in my current development environment
-    
-  Scenario: Add a New Node (i.e. Instantiate a Class) in the Development Area
-    Given I am in my current pythagoras development environment
-    And the desired class shape (e.g. tetrahedron generator) is selected in the object menu
-    And the current view box is empty
-    When I perform an insert input press (e.g. right click a mouse)
-    Then a new node (e.g. tetrahedron) instantiated from the selected class is added to my current view box
-    
-  Example:
-    | <default development environment screen> |
-    | <empty view box> |
-    | <object menu with class selected> |
-    => <insert-press>
-    | <default development environment screen> |
-    | <view box with new node instantiated from class> |
-    | <object menu with class selected> |
+  I should be able to add new Nodes of the corresponding kind (Instance, Type, etc.)
+
+Scenario: Instantiating a Type 
+    Given I am in my current Development Environment 
+    And a single Type shape is selected in the Objects menu 
+    When I perform an "Insert" action 
+    Then a new Node appears in my current View Box 
+    And the new Node is an instance of the selected Type 
+
+Scenario: Subtyping a single Type 
+    Given I am in my current Development Environment 
+    And a single Type shape is selected in the Objects menu 
+    When I perform the "Subtype" action 
+    Then a new Node appears in my current View Box 
+    And the new Node is asubtype of the selected Type 
+
+Scenario: Subtyping multiple Types
+    Given I am in my current Development Environment 
+    And two or more Type shapes are selected in the Objects menu 
+    # see https://www.python.org/download/releases/2.3/mro/
+    And the selected Types have no Member Resolution Conflicts
+    When I perform the "Subtype" action 
+    Then a new Node appears in my current View Box 
+    And the new Node is a subtype of all selected Types
+
