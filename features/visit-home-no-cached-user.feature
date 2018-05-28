@@ -9,14 +9,7 @@ Feature: Visit the Pythagoras Development Home Page With No Cached User Cookie
     Then a new user with a default development environment is created with a randomly generated UserId
     And a cookie is added to the response corresponding to the UserId
     And the default development environment is displayed
-    
-  Scenario Outline: Inability to connect Nodes with incompatible Ports
-    Given I have a Node with an <port1>
-    And I have another Node with an <port2>
-    When I try to create a Connector between the Ports
-    Then I observe that the Nodes do not get connected
-    And I receive an error message from the System stating that the Ports are incompatible
-    
+        
     Examples:
     | <default development environment screen> |
     | <object menu> |
