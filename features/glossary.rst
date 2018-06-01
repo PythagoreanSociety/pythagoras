@@ -60,3 +60,29 @@ _`Sandbox`
  
 _`UserMessage`
  something displayed to a user as a message, for instance a warning, error, success notification, something meant for user consumption
+
+-`User`
+ an actor respresenting a sentient entity
+
+_`Account`
+ an entity in UserStorage representing a User with an associated Playground
+
+_`UserStorage`
+ a persistant store of a user Playground
+
+_`AuthenticatedUser`
+ a User whose identity has been established by Pythagoras
+
+_`NewUser`
+ a User who does not yet exist in the system and needs to be created
+
+_`AuthenticationProcess`
+ a process to authenticate an existing user
+
+_`NewUserProcess`
+ a process to create a new user
+ 
+_`PlaygroundURL`
+ a URL which will go to the Pythagoras playground
+
+ 
