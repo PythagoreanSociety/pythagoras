@@ -54,4 +54,7 @@ _`Data Flow Chart`
  
 -`Cursor`
  the current location context for commands, for instance a textual cursor or a small region in 3d space where inserts take place
+
+-`Sandbox`
+ the part of the playground where data flow charts can be constructed and types can be instatiated, as oppposed to the TypeMenu
  
