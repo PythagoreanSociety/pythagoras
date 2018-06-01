@@ -61,7 +61,7 @@ _`Sandbox`
 _`UserMessage`
  something displayed to a user as a message, for instance a warning, error, success notification, something meant for user consumption
 
--`User`
+_`User`
  an actor respresenting a sentient entity
 
 _`Account`
@@ -85,4 +85,6 @@ _`NewUserProcess`
 _`PlaygroundURL`
  a URL which will go to the Pythagoras playground
 
+_`AutomaticLoginURL`
+ a cryptographic URL which when followed in a limited period of time logs the User in to Pythagoras
  
