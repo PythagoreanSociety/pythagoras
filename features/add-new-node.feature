@@ -36,6 +36,6 @@ Scenario: Subtyping multiple Types with resolution conflicts
     # see https://www.python.org/download/releases/2.3/mro/
     And the selected Types have Member Resolution Conflicts
     When I perform an InsertCommand
-    Then a ErrorMessage is sent to the user detailing the conflicts
+    Then a UserMessage is sent to the user detailing the conflicts
     And no Node appears in the TypeMenu
     
