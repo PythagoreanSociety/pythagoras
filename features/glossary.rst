@@ -31,30 +31,32 @@ _`Type Hierarchy`
 _`Data Flow Chart`
  a directed graph of Component Nodes whose ports are linked with Connectors that represents how data flows between them when the Component is activated
 
--`Static Data`
+_`Static Data`
  any data hard-coded into the system itself, could be a number like integer, float, double, rational, or a character or string, or more complex data like a sound, image, video, or even complex like a url
 
--`DataNode`
+_`DataNode`
  a node subtype which represents just data as opposed to its operations, like a POJO class
  
--`StaticDataNode`
+_`StaticDataNode`
  a data node subtype for static constant data, for instance pre-defined data such as a number or string, or could also be tabular data, or multi-dimensional
 
--`TypeMenu`
+_`TypeMenu`
  a menu of all the different types currently defined and available for adding to the Playground, either as an instance or a new subtype
 
--`Playground'
+_`Playground'
  the current development environment, both visually and including all existing state and defined types and instances
 
--`Command`
+_`Command`
  something the user can do in the Playground, such as instantiating a node type, creating a subtype, connecting two nodes
 
--`InsertCommand`
+_`InsertCommand`
  a command to insert something, such as to instantiate a new type instance in the Playground
  
--`Cursor`
+_`Cursor`
  the current location context for commands, for instance a textual cursor or a small region in 3d space where inserts take place
 
--`Sandbox`
+_`Sandbox`
  the part of the playground where data flow charts can be constructed and types can be instatiated, as oppposed to the TypeMenu
  
+_`UserMessage`
+ something displayed to a user as a message, for instance a warning, error, success notification, something meant for user consumption
