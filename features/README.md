@@ -14,4 +14,3 @@ There are a few rules we'd like you to follow:
  * Please keep the step descriptions self-contained, do not refer to entities in other steps using pronouns.
  
  * Remember that test writers should be able to transform each of the step descriptions into a code block without referring to other steps in the same or different scenarios.
-

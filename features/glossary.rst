@@ -43,7 +43,7 @@ _`StaticDataNode`
 _`TypeMenu`
  a menu of all the different types currently defined and available for adding to the Playground, either as an instance or a new subtype
 
-_`Playground'
+_`Playground`
  the current development environment, both visually and including all existing state and defined types and instances
 
 _`Command`
