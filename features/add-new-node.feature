@@ -1,41 +1,31 @@
-Feature: Adding a New Node 
-  In order to create new Instances and subtype existing Types
-  As a User
-  I should be able to add new Nodes of the corresponding kind (Instance, Type, etc.)
+Feature: Adding a New Object
+  In order to be able to reuse the functionality of existing Objects
+  As an End User
+  I should be able to derive an Object from one or more existing Objects
 
-Scenario: Instantiating a Type 
-    Given I am in my current Playground 
-    And a single Type is selected in the TypeMenu 
-    And the Cursor is positioned in the Sandbox
-    When I perform an InsertCommand 
-    Then a new Node is created at the current Cursor position 
-    And the new Node is an instance of the selected Type 
+Scenario: Deriving from a single Object 
+    Given I am in my current Design
+    And a single Object is selected
+    When I perform a "Derive" action
+    Then a new Object is created in the current Design 
+    And the new Object inherits all Attributes of the original Object 
 
-Scenario: Subtyping a single Type 
-    Given I am in my current Playground 
-    And a single Type is selected in the TypeMenu
-    And the Cursor is positioned in the TypeMenu
-    When I perform an InsertCommand
-    Then a new Node appears in the TypeMenu 
-    And the new Node is a subtype of the selected Type 
 
-Scenario: Subtyping multiple Types with no resolution conflicts
-    Given I am in my current Development Environment 
-    And two or more Types are selected in the TypeMenu 
-    And the Cursor is positioned in the TypeMenu
-    # see https://www.python.org/download/releases/2.3/mro/
-    And the selected Types have no Member Resolution Conflicts
-    When I perform an InsertCommand
-    Then a new Node appears in the TypeMenu
-    And the new Node is a subtype of all selected Types
+Scenario: Deriving from multiple Objects with no Resolution Conflicts
+    Given I am in my current Design
+    And two or more Objects are selected
+    # see more on this here: https://www.python.org/download/releases/2.3/mro/
+    And the selected Objects have no Member Resolution Conflicts
+    When I perform a "Derive" action
+    Then a new Object is created in the current Design 
+    And the new Object inherits all Attributes of the original Objects
 
-Scenario: Subtyping multiple Types with resolution conflicts
-    Given I am in my current Development Environment 
-    And two or more Types are selected in the TypeMenu 
-    And the Cursor is positioned in the TypeMenu
-    # see https://www.python.org/download/releases/2.3/mro/
-    And the selected Types have Member Resolution Conflicts
-    When I perform an InsertCommand
-    Then a UserMessage is sent to the user detailing the conflicts
-    And no Node appears in the TypeMenu
-    
+Scenario: Deriving from multiple Objects with Resolution Conflicts
+    Given I am in my current Design
+    And two or more 1 are selected in the TypeMenu 
+    And two or more Objects are selected
+    # see more on this here: https://www.python.org/download/releases/2.3/mro/
+    And the selected Objects have no Member Resolution Conflicts
+    When I perform a "Derive" action
+    Then a User Message is sent to the user detailing the conflicts
+    And no new Object appears in the Design

@@ -2,67 +2,86 @@ Glossary
 --------
 
 _`System`
- the environment where Agents are interacting with each other and other Systems 
+ the environment where `Agent`_s are interacting with each other and other Systems 
 
-_`Node`
- a basic component of the System that may be a `Primitive Node`_ or a `Complex Node`_ that has zero or more Ports
+_`Object`
+ a basic concept that denotes anything perceived as a separate entity inside the system, 
+ can have zero or more `Attribute`_s
+
+_`Attribute`
+ an `Object`_ reference that is a part of another `Object`_
  
 _`Connector`
- a basic component of the System that represents a directed connection between Nodes
+ a basic component of the `System`_ that represents a directed connection between `Object`_s 
+ and which can be of `Composition`_, `Derivation`_ or `Data Flow`_ type
+
+_`Process`
+ an `Object`_ that may be a part of a `Data Flow`_, that may transforms `Mesaages`_ flowing through it 
+ and that has zero or more `Port`_s; can be activated (started) or deactivated (stopped)
+
+_`Message`
+ an `Object`_ traveling through a `Data Flow`_ from one `Port`_ to another; must be owned by a `Process`_
 
 _`Port`
- an attribute of a `Node`_ that allows Connectors to be attached to it. Can be an `Input Port`_ or an `Output Port`_
+ an attribute of a `Process`_ that allows `Data Flow Connector`_s to be attached to it; 
+ can be an `Input Port`_ or an `Output Port`_
+ 
+_`Node`
+ an `Object`_ as a part of a `Graph`_, with its role determined by `Connector`_s attached to it 
+ and the type of `Graph`_ it belongs to, such as a `Node`_ of a `Data Flow`_ is a `Process`_
  
 _`Graph`
- a set of Nodes and Connectors representing one of the aspects of the system: `Composition Tree`_, `Type Hierarchy`_ or `Data Flow Chart`_
+ a set of `Node`_s and `Connector`_s representing one of the aspects of the 3 fundamental aspects of the `System`_: 
+ `Composition Tree`_, `Derivation Hierarchy`_ or `Data Flow`_
 
 _`Input Port`
- a Port that allows data to flow into a `Node`
+ a `Port`_ that allows data to flow into a `Process`_
 
 _`Output Port`
- a Port that allows data to flow out of a `Node`
+ a `Port`_ that allows data to flow out of a `Process`_
  
 _`Composition Tree`
- a tree of Component Nodes where each parent Node contains its children, used to implement the modular structure of the System
+ a tree of `Object`_s where each parent `Object`_ contains its children who are its `Attribute`_s; 
+ this is used to implement the modular structure of the `System`_
  
-_`Type Hierarchy`
- a graph of Type Nodes where each Node is derived from one or more preceding Nodes, except the first Node, which is the root type called `Object`
+_`Derivation Hierarchy`
+ a graph of `Object`_s where each downstream `Node`_ is derived from one or more preceding `Node`_s, 
+ except for the root `Node`_, which is identical to `Object`_
  
-_`Data Flow Chart`
- a directed graph of Component Nodes whose ports are linked with Connectors that represents how data flows between them when the Component is activated
+_`Data Flow`
+ a directed `Graph`_ of `Process`_es which is a `Process`_ itself and whose `Port`_s are linked with `Connector`_s 
+ that represents how data flows between them when the `Data Flow`_ is activated
 
-_`Static Data`
- any data hard-coded into the system itself, could be a number like integer, float, double, rational, or a character or string, or more complex data like a sound, image, video, or even complex like a url
+_`Core Object`
+ an `Object`_ representing data supported by underlying implementation of the `System`_, could be a number like 
+ integer, float, or a character string
 
-_`DataNode`
- a node subtype which represents just data as opposed to its operations, like a POJO class
+_`Generator`
+ a `Process`_ providing `Object`_s with pre-defined value on its `Output Port`_
  
-_`StaticDataNode`
- a data node subtype for static constant data, for instance pre-defined data such as a number or string, or could also be tabular data, or multi-dimensional
+_`Storage`
+ a `Process`_ that can produce `Object`_s to its `Output Port` that were sent to its `Input Port` earlier
 
-_`TypeMenu`
- a menu of all the different types currently defined and available for adding to the Playground, either as an instance or a new subtype
-
-_`Playground`
- the current development environment, both visually and including all existing state and defined types and instances
-
-_`Command`
- something the user can do in the Playground, such as instantiating a node type, creating a subtype, connecting two nodes
-
-_`InsertCommand`
- a command to insert something, such as to instantiate a new type instance in the Playground
+_`Shortlist`
+ a menu of `Object`_s that are most likely to be requested by `User`_ in current context
  
-_`Cursor`
- the current location context for commands, for instance a textual cursor or a small region in 3d space where inserts take place
+_`Design`
+ the `Data Flow`_, part of the `Composition Tree`_ or `Derivation Hierarchy`_ that is currently being edited by `User`_
 
-_`Sandbox`
- the part of the playground where data flow charts can be constructed and types can be instatiated, as oppposed to the TypeMenu
+_`Action`
+ something the `User`_ can do in the `Design`_, such as deriving `Objects`_, creating their `Attributes`_,
+ connecting them in a `Data Flow`_ etc.
  
-_`UserMessage`
- something displayed to a user as a message, for instance a warning, error, success notification, something meant for user consumption
+_`Hotspot`
+ the current location context for `Action`_s, for instance a small region in 3D space where `Action`_ targets
+ or results may be found
+ 
+_`User Message`
+ something displayed to a `User`_ as a message, for instance a warning, error, success notification, 
+ something meant for `User`_ consumption
 
 _`User`
- an actor respresenting a sentient entity
+ an actor representing a sentient entity
 
 _`Account`
  an entity in UserStorage representing a User with an associated Playground
